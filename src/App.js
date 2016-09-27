@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { Link } from 'react-router'
+import NavLink from './NavLink'
+import Login from './Login'
 
 class App extends Component {
   render() {
@@ -8,11 +11,14 @@ class App extends Component {
       <div className="App">
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
+          <h2>Admins</h2>
         </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <ul role="nav">
+          <li><Link to="/register">Registro</Link></li>
+          <li><Link to="/venues">Lugares</Link></li>
+          <li><NavLink to="/" onlyActiveOnIndex={true}>Home</NavLink></li>
+        </ul>
+        {this.props.children || <Login/>}
       </div>
     );
   }
