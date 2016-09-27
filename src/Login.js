@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from 'axios'
+import { browserHistory } from 'react-router'
 
 export default React.createClass({
   contextTypes: {
@@ -32,6 +33,7 @@ export default React.createClass({
     })
     .then(function (data) {
       console.log('success: ', data);
+      browserHistory.push('/venues')
       // this.setState({data: data.data});
       // this.context.router.push('/venues');
     })
