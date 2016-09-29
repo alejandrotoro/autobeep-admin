@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router'
 import NavLink from './NavLink'
 
-export default React.createClass({
+const VenuesListContainer = React.createClass({
   render() {
     return (
       <div>
@@ -15,4 +15,6 @@ export default React.createClass({
       </div>
     )
   }
-})
+});
+
+export default VenuesListContainer;

@@ -9,7 +9,6 @@ import Login from './Login'
 module.exports = (
   <Route path="/" component={App}>
     <IndexRoute component={Login}/>
-    <Route path="/register" component={Register}/>
     <Route path="/venues" component={Venues}>
       <Route path="/venues/:venueId" component={Venue}/>
     </Route>

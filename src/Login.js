@@ -1,8 +1,11 @@
 import React from 'react'
 import axios from 'axios'
 import { browserHistory } from 'react-router'
+import constants from './ComponentConstants'
 
-export default React.createClass({
+const api_rul = constants.API.API_URL;
+
+const LoginForm = React.createClass({
   contextTypes: {
     router: React.PropTypes.object
   },
@@ -10,16 +13,13 @@ export default React.createClass({
     return {email: '', password: ''};
   },
   handleEmailChange: function(e) {
-    console.log('entra al handleEmailChange');
     this.setState({email: e.target.value});
   },
   handlePasswordChange: function(e) {
-    console.log('entra al handlePasswordChange');
     this.setState({password: e.target.value});
   },
   handleSubmit: function(e) {
     e.preventDefault();
-    console.log('entra al handleSubmit');
     const email = this.state.email.trim();
     const password = this.state.password.trim();
 
@@ -27,15 +27,13 @@ export default React.createClass({
       return;
     }
 
-    axios.post('http://dev.updatedcar.com/api/v1/admins/authenticate', {
+    axios.post( api_rul + 'admins/authenticate', {
       email: email,
       password: password
     })
     .then(function (data) {
-      console.log('success: ', data);
-      browserHistory.push('/venues')
-      // this.setState({data: data.data});
-      // this.context.router.push('/venues');
+      constants.AUTH.token = data.data.access_token;
+      browserHistory.push('/venues');
     })
     .catch(function (error) {
       console.log(error);
@@ -52,4 +50,6 @@ export default React.createClass({
       </form>
     )
   }
-})
+});
+
+export default LoginForm;

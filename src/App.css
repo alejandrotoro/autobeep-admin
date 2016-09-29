@@ -7,11 +7,18 @@
   height: 80px;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
+.App-header, .header {
+  background-color: #123abc;
+  height: 50px;
   padding: 20px;
   color: white;
+}
+
+.brand-name {
+  float: left;
+  margin-left: 10%;
+  margin-top: 12px;
+  padding: 0;
 }
 
 .App-intro {
@@ -20,6 +27,21 @@
 
 .active {
   color: green;
+}
+
+.header-links {
+  display: inline-flex;
+  float: right;
+  list-style: none;
+  margin-right: 4%;
+}
+
+.header-links li {
+  padding: 0 10px;
+}
+
+.header-links li a {
+  color: #FFF;
 }
 
 @keyframes App-logo-spin {
