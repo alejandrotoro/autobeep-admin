@@ -6,11 +6,8 @@ import constants from './ComponentConstants'
 const api_rul = constants.API.API_URL;
 
 const LoginForm = React.createClass({
-  contextTypes: {
-    router: React.PropTypes.object
-  },
   getInitialState: function() {
-    return {email: '', password: ''};
+    return {email: '', password: '', access_token: ''};
   },
   handleEmailChange: function(e) {
     this.setState({email: e.target.value});
@@ -37,7 +34,7 @@ const LoginForm = React.createClass({
     })
     .catch(function (error) {
       console.log(error);
-      // this.context.router.push('/');
+      browserHistory.push('/');
     });
 
   },

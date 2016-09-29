@@ -11,7 +11,7 @@ const App = (props) => {
       <div className="header">
         <h2 className="brand-name">Admins</h2>
         <ul role="nav" className="header-links">
-          <li><Link to="/register">Registro</Link></li>
+          <li><Link to="/promos">Promos</Link></li>
           <li><Link to="/venues">Lugares</Link></li>
           <li><NavLink to="/" onlyActiveOnIndex={true}>Home</NavLink></li>
         </ul>
